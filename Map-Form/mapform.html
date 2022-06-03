@@ -1,0 +1,25 @@
+<template>
+    <lightning-card  title="Dropdown">
+        <lightning-combobox
+            name="progress"
+            label="Select a country:"
+            value=""
+            placeholder="Country Name"
+            options={options}
+            onchange={handleChange}>
+        </lightning-combobox>
+        <p>Country: {value}</p>
+        <template if:true={showMap}>
+            <lightning-map 
+                map-markers={mapMarkers}
+                zoom-level={zoomLevel}>
+            </lightning-map> 
+        </template>
+        <template if:true={showForm}>
+            <lightning-record-form
+                object-api-name={objectApiName}
+                fields={fields}>
+            </lightning-record-form>
+        </template>
+    </lightning-card>
+</template>
